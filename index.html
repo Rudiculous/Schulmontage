@@ -16,12 +16,23 @@
         font-family: "Montserrat", sans-serif;
         margin: 0;
         background-color: #f0f0f0;
+        color: #333;
+        /* Hintergrundbild wurde hier entfernt */
+      }
+
+      /* Der neue Container für das fixierte Hintergrundbild */
+      body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
         background-image: url("https://strandfraeulein.de/wp-content/uploads/2024/05/Wanddeko-Kolibri-Line-Art-rotated.jpeg");
         background-size: cover;
         background-repeat: no-repeat;
-        background-attachment: fixed; /* Diese Zeile wurde wieder eingefügt */
         background-position: center center;
-        color: #333;
+        z-index: -1; /* Wichtig: Sorgt dafür, dass der Kolibri hinter dem restlichen Inhalt liegt */
       }
 
       h1 {
