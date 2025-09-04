@@ -20,7 +20,7 @@
         background-image: url("https://strandfraeulein.de/wp-content/uploads/2024/05/Wanddeko-Kolibri-Line-Art-rotated.jpeg");
         background-size: cover;
         background-repeat: no-repeat;
-        background-attachment: fixed;
+        background-attachment: fixed; /* HIER NEU: Hintergrundbild wird statisch */
         background-position: center center;
         color: #333; /* Dunkelgrau für den Haupttext */
       }
@@ -31,12 +31,21 @@
         text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.7); /* Hellerer Schatten für Kontrast */
       }
 
+      /* NEU: Fixierter Container für den Fortschrittsbalken */
+      .fixed-header-container {
+        position: sticky; /* HIER NEU: Position wird sticky */
+        top: 0;
+        background-color: transparent; /* HIER KORRIGIERT: Hintergrund ist jetzt transparent */
+        padding-bottom: 20px;
+        z-index: 1000;
+      }
+
       /* Fortschrittsbalken */
       .progress-container {
         width: 80%;
         max-width: 600px;
         margin: 20px auto;
-        background-color: rgba(0, 0, 0, 0.2); /* Transparente dunkle Box */
+        background-color: rgba(0, 0, 0, 0.2);
         border-radius: 10px;
         overflow: hidden;
         box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
@@ -67,6 +76,11 @@
         margin-top: 10px;
         font-size: 1.1em;
         color: #222; /* Dunklerer Text für Fortschrittsbalken-Info */
+      }
+
+      /* Inhalt unter dem fixierten Header */
+      #main-content {
+        padding-top: 100px; /* Damit der Inhalt nicht vom fixierten Header verdeckt wird */
       }
 
       .container {
@@ -216,21 +230,20 @@
           color: #a52a2a; /* Braun */
         }
 
-        .progress-container,
-        .progress-text,
-        .status-message {
+        .fixed-header-container {
           display: none;
         }
       }
     </style>
   </head>
   <body>
-    <div id="main-content">
+    <div class="fixed-header-container">
       <h1>Meine Schultage</h1>
-
       <div class="progress-container" id="progressBar"></div>
       <div class="progress-text" id="progressText"></div>
+    </div>
 
+    <div id="main-content">
       <div class="container">
         <div class="month-tile">
           <h3>September 2025</h3>
@@ -625,4 +638,3 @@
     </script>
   </body>
 </html>
-
