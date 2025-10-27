@@ -21,6 +21,7 @@
       }
 
       /* Der Container für das fixierte Hintergrundbild */
+      /* Der Container für das fixierte Hintergrundbild */
       body::before {
         content: "";
         position: fixed;
@@ -28,13 +29,12 @@
         left: 0;
         width: 100%;
         height: 100%;
-        /* NEU: Nur das Bild verwenden, KEIN linear-gradient mehr */
-        background-image: url("Blume.png");
-        background-size: cover;
+        background-image: url("Blume.png"); /* Stellen Sie sicher, dass hier kein linear-gradient mehr ist */
+        background-size: 100% 200%; /* NEU: Bild 100% breit, aber 200% hoch, um den unteren Teil sichtbar zu machen */
         background-repeat: no-repeat;
-        background-position: center center;
+        background-position: center bottom; /* NEU: Das Bild zentriert und den UNTEREN Rand an der Unterseite des Containers ausrichten */
         z-index: -1;
-        /* Optional: Deckkraft leicht reduzieren, falls der Text schwer lesbar wird */
+        opacity: 0.9; /* Optional: Deckkraft anpassen */
       }
 
       h1 {
