@@ -28,15 +28,13 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background-image: linear-gradient(
-            rgba(255, 255, 255, 0.4),
-            rgba(255, 255, 255, 0.4)
-          ),
-          url("Blume.png");
+        /* NEU: Nur das Bild verwenden, KEIN linear-gradient mehr */
+        background-image: url("Blume.png");
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center center;
         z-index: -1;
+        /* Optional: Deckkraft leicht reduzieren, falls der Text schwer lesbar wird */
       }
 
       h1 {
